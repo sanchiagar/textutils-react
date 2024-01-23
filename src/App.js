@@ -5,7 +5,7 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react'
-// import { Routes,Route } from 'react-router-dom'
+import { Routes,Route } from 'react-router-dom'
 
 // import {
   
@@ -33,7 +33,7 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor = '#042743';
       showAlert("Dark mode has been enabled", "success")
-      document.title = 'TextUtils - Dark mode'
+      // document.title = 'TextUtils - Dark mode'
       // setInterval(()=>{
       //    document.title = 'TextUtils is Amazing'
       // }, 2000)
@@ -45,7 +45,7 @@ function App() {
       setMode('light')
       document.body.style.backgroundColor = 'white'
       showAlert("Light mode has been enabled", "success")
-      document.title = 'TextUtils - Light mode'
+      // document.title = 'TextUtils - Light mode'
     }
   }
   return (
@@ -55,17 +55,17 @@ function App() {
 
       
 
-      <Alert alert={alert} />
       <Navbar title="TextUtilss" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
-      <div className="container my-3">
-        {/* <Routes>
+      <Alert alert={alert} />
+       <div className="container my-3">
+         <Routes>
           <Route path="/about"
-            element={<About />} /> */}
-          {/* <Route path="/"
-            element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below " mode={mode} />} />
-          </Routes> */}  
-        <TextForm showAlert={showAlert} heading="Enter the text to analyze below " mode={mode} />
-          <About/>
+            element={<About mode={mode} />} /> 
+           <Route path="/"
+            element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces " mode={mode} />} />
+          </Routes>   
+        {/* <TextForm showAlert={showAlert} heading="Enter the text to analyze below " mode={mode} /> */}
+          {/* <About/> */}
       </div>
       
        
